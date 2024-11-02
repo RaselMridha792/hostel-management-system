@@ -1,9 +1,13 @@
+import { Outlet } from "react-router-dom"
+import Navbar from "./header/Navbar"
+
 function App() {
 
 
   return (
     <>
-      <button className='btn btn-primary'>click me</button>
+    <Navbar></Navbar>
+    <Outlet></Outlet>
     </>
   )
 }
