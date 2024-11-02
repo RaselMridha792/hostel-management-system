@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="bg-base-100 py-5">
-        <div className="navbar max-w-screen-2xl mx-auto border-b">
+        <div className="navbar max-w-screen-2xl mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -55,7 +55,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 text-2xl">{links}</ul>
+            <ul className="menu menu-horizontal px-1 text-xl">{links}</ul>
           </div>
           <div className="navbar-end gap-5 text-xl">
             <select className="hidden md:flex" name="" id="">
@@ -68,10 +68,18 @@ const Navbar = () => {
                 <img className="w-5" src={user} alt="" />
                 Login
               </button>
-            <a className="btn btn-success text-white font-bold rounded-3xl">
-              Book a demo
+            <a className="btn btn-success font-bold rounded-3xl">
+              Book Now
             </a>
           </div>
+        </div>
+        <div className="bg-gray-900 text-white hidden md:flex">
+          <ul className="navbar gap-5 items-center justify-center">
+            <Link>platform</Link>
+            <Link>technology</Link>
+            <Link>Resource</Link>
+            <Link>Pricing</Link>
+          </ul>
         </div>
       </nav>
     </>
