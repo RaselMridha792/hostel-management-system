@@ -62,7 +62,7 @@ const About = () => {
               </h1>
               <p className="mb-4">
                 The <strong>Hostel Management System</strong> is a comprehensive
-                web application tailored for [Your Institute's Name] to
+                web application tailored for Your Institutes Name to
                 efficiently manage and streamline hostel operations. Leveraging
                 the power of <strong>React</strong> for dynamic user interfaces
                 and <strong>Tailwind CSS</strong> for modern and responsive
@@ -181,7 +181,7 @@ const About = () => {
               <p className="mb-4">
                 This <strong>Hostel Management System</strong> represents a
                 significant step forward in modernizing hostel administration at
-                [Your Institute's Name]. By integrating technology into daily
+                Your Institutes Name. By integrating technology into daily
                 operations, the application aims to create a more efficient,
                 user-friendly, and supportive living environment for all
                 students.

@@ -11,7 +11,7 @@ const Navbar = () => {
         <NavLink to="/about">About us</NavLink>
       </li>
       <li>
-        <NavLink to="/bookNow">Book Now</NavLink>
+        <NavLink to="/booknow">Book Now</NavLink>
       </li>
     </>
   );
@@ -68,9 +68,9 @@ const Navbar = () => {
                 <img className="w-5" src={user} alt="" />
                 Login
               </button>
-            <a className="btn btn-success font-bold rounded-3xl">
+            <Link to='/booknow' className="btn btn-success font-bold rounded-3xl">
               Book Now
-            </a>
+            </Link>
           </div>
         </div>
         <div className="bg-gray-900 text-white hidden md:flex">
