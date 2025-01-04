@@ -1,7 +1,21 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/hostel.png";
-import user from "../assets/user.png";
+import userImg from "../assets/user.png";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import { signOut } from "firebase/auth";
+import auth from "../provider/firebase.init";
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("sign Out successfully");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   const links = (
     <>
       <li>
@@ -11,7 +25,11 @@ const Navbar = () => {
         <NavLink to="/about">About us</NavLink>
       </li>
       <li>
-        <NavLink to="/booknow">Book Now</NavLink>
+        {user ? (
+          <NavLink to="/booknow">Book Now</NavLink>
+        ) : (
+          <NavLink to="/register">Register</NavLink>
+        )}
       </li>
     </>
   );
@@ -50,7 +68,10 @@ const Navbar = () => {
               </ul>
             </div>
             <img className="w-10" src={logo} alt="" />
-            <Link to="/" className=" hidden md:flex text-2xl font-bold uppercase">
+            <Link
+              to="/"
+              className=" hidden md:flex text-2xl font-bold uppercase"
+            >
               Hostello
             </Link>
           </div>
@@ -64,11 +85,22 @@ const Navbar = () => {
               <option value="">Polytechnic</option>
               <option value="">University</option>
             </select>
-              <button className="flex gap-3 items-center">
-                <img className="w-5" src={user} alt="" />
-                Login
-              </button>
-            <Link to='/booknow' className="btn btn-success font-bold rounded-3xl">
+            {user ? (
+              <button onClick={handleSignOut}>Sign Out</button>
+            ) : (
+              <>
+                {" "}
+                <Link to="/login" className="flex gap-3 items-center">
+                  <img className="w-5" src={userImg} alt="" />
+                  Login
+                </Link>
+              </>
+            )}
+
+            <Link
+              to="/booknow"
+              className="btn btn-success font-bold rounded-3xl"
+            >
               Book Now
             </Link>
           </div>

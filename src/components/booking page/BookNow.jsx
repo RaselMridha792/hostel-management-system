@@ -146,7 +146,7 @@ const BookNow = () => {
                         <span className="label-text">Select Your District*</span>
                     </label>
                     <select id="district" required className="select select-bordered w-full">
-                        <option value="" disabled selected>Please Select</option>
+                        <option defaultValue="select" disabled selected>Please Select</option>
                         {districts.map((district, index) => (
                             <option key={index} value={district}>
                                 {district}
